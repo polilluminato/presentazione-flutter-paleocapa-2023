@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_5id/pages/griglia_page.dart';
 import 'package:flutter_5id/pages/lista_page.dart';
 import 'package:flutter_5id/pages/splash_page.dart';
 
@@ -35,15 +36,24 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int selectedTab = 0;
-  List<Widget> tabList = <Widget>[const SplashPage(), const ListPage()];
+  List<Widget> tabList = <Widget>[
+    const SplashPage(),
+    const ListPage(),
+    const GridPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
-
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(widget.title),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 8.0),
+            child: Icon(Icons.settings),
+          )
+        ],
       ),
       body: tabList[selectedTab],
       bottomNavigationBar: NavigationBar(
@@ -55,20 +65,22 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedIndex: selectedTab,
         destinations: const <Widget>[
           NavigationDestination(
-            icon: Icon(Icons.vpn_key),
+            icon: Icon(Icons.star_border),
             label: 'Splash',
           ),
           NavigationDestination(
-            icon: Icon(Icons.text_fields),
+            icon: Icon(Icons.list_alt),
             label: 'List',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.view_cozy_outlined),
+            label: 'Grid',
           ),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
-
-
 
 // Center(
 //   child: Column(

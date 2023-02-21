@@ -9,9 +9,6 @@ class ListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Pokemon List"),
-      ),
       body: ListView.builder(
         itemCount: pokemonList.length,
         itemBuilder: (context, index) {

@@ -5,14 +5,10 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
     TextTheme textTheme = Theme.of(context).textTheme;
     Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Splash page"),
-      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,13 +24,16 @@ class SplashPage extends StatelessWidget {
               style: textTheme.headlineMedium,
             ),
           ),
-          Text(
-            "Benvenuti nell'applicazione della 5ID al Pietro Paleocapa di Bergamo. Clicca sul bottone qui sotto per accedere!",
-            textAlign: TextAlign.center,
-            style: textTheme.bodyMedium,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Text(
+              "Benvenuti nell'applicazione della 5ID al Pietro Paleocapa di Bergamo. Clicca sul bottone qui sotto per accedere!",
+              textAlign: TextAlign.center,
+              style: textTheme.bodyMedium,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 24),
+            padding: const EdgeInsets.only(top: 32),
             child: ElevatedButton(
               onPressed: () {},
               child: const Text("Accedi"),
