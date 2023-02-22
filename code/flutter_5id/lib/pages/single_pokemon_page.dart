@@ -34,53 +34,55 @@ class SinglePokemonPage extends StatelessWidget {
         builder: (BuildContext ctx, AsyncSnapshot<Pokemon> snapshot) {
           if (snapshot.hasData) {
             Pokemon myPokemon = snapshot.data!;
-            return Column(
-              children: [
-                Image.network(myPokemon.imageLink),
-                Text(
-                  myPokemon.name,
-                  style: textTheme.displayMedium,
-                ),
-                Card(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(16),
-                        child: Column(
-                          children: [
-                            Text(
-                              "${myPokemon.weight}",
-                              style: textTheme.headlineMedium,
-                            ),
-                            Text(
-                              "Weight",
-                              style: textTheme.bodyLarge,
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.all(16),
-                        child: Column(
-                          children: [
-                            Text(
-                              "${myPokemon.height}",
-                              style: textTheme.headlineMedium,
-                            ),
-                            Text(
-                              "Height",
-                              style: textTheme.bodyLarge,
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  Image.network(myPokemon.imageLink),
+                  Text(
+                    myPokemon.name,
+                    style: textTheme.displayMedium,
                   ),
-                )
-              ],
+                  Card(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 32, vertical: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            children: [
+                              Text(
+                                "${myPokemon.weight}",
+                                style: textTheme.headlineMedium,
+                              ),
+                              Text(
+                                "Weight",
+                                style: textTheme.bodyLarge,
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            children: [
+                              Text(
+                                "${myPokemon.height}",
+                                style: textTheme.headlineMedium,
+                              ),
+                              Text(
+                                "Height",
+                                style: textTheme.bodyLarge,
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             );
           } else {
             return const Center(
