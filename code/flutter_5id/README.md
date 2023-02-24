@@ -14,11 +14,15 @@ Codice dell'applicazione di esempio realizzata durante la parte di demo per most
 
 ## 📱 Screenshots
 
-| Screenshot #1 | Screenshot #2 | Screenshot #3 | Screenshot #4 |
-| - | - | - | - |
-| <img src="screenshots/splash-light.png"/> | <img src="screenshots/list-light.png"/> | <img src="screenshots/grid-light.png"/> | <img src="screenshots/single-light.png"/> |
-| <img src="screenshots/splash-dark.png"/> | <img src="screenshots/list-dark.png"/> | <img src="screenshots/grid-dark.png"/> | <img src="screenshots/single-dark.png"/> |
+| Home | Lista | Griglia | 
+| - | - | - |
+| <img src="screenshots/splash-light.png"/> | <img src="screenshots/list-light.png"/> | <img src="screenshots/grid-light.png"/> |
+| <img src="screenshots/splash-dark.png"/> | <img src="screenshots/list-dark.png"/> | <img src="screenshots/grid-dark.png"/> | 
 
+| Single Page | Ip Location | Weather | 
+| - | - | - |
+| <img src="screenshots/single-light.png"/> | <img src="screenshots/ip-location-light.png"/> | <img src="screenshots/weather-light.png"/> |
+| <img src="screenshots/single-dark.png"/> | <img src="screenshots/ip-location-dark.png"/> | <img src="screenshots/weather-dark.png"/> |
 ## 💎 Contributing
 
 If you have any idea, feel free to fork it and submit your changes back to me.
