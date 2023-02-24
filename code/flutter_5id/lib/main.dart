@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_5id/pages/griglia_page.dart';
+import 'package:flutter_5id/pages/ip_location_page.dart';
 import 'package:flutter_5id/pages/lista_page.dart';
 import 'package:flutter_5id/pages/splash_page.dart';
+import 'package:flutter_5id/pages/weather_api.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
+        colorSchemeSeed: Colors.grey,
         brightness: Brightness.light,
       ),
       home: const MyHomePage(title: 'Flutter Application 5ID'),
@@ -39,7 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> tabList = <Widget>[
     const SplashPage(),
     const ListPage(),
-    const GridPage()
+    const GridPage(),
+    const IpLocationPage(),
+    const WeatherPage()
   ];
 
   @override
@@ -65,74 +69,27 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedIndex: selectedTab,
         destinations: const <Widget>[
           NavigationDestination(
-            icon: Icon(Icons.star_border),
+            icon: Icon(Icons.home_outlined),
             label: 'Splash',
           ),
           NavigationDestination(
-            icon: Icon(Icons.list_alt),
+            icon: Icon(Icons.table_rows_outlined),
             label: 'List',
           ),
           NavigationDestination(
-            icon: Icon(Icons.view_cozy_outlined),
+            icon: Icon(Icons.grid_view),
             label: 'Grid',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.my_location),
+            label: 'Location',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.sunny_snowing),
+            label: 'Weather',
           ),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
-
-// Center(
-//   child: Column(
-//     mainAxisAlignment: MainAxisAlignment.center,
-//     children: <Widget>[
-//       Container(
-//         margin: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-//         child: Text(
-//           'Flutter Application 5ID',
-//           style: TextStyle(
-//             color: colorScheme.primary,
-//             fontSize: 34,
-//             fontWeight: FontWeight.bold,
-//           ),
-//         ),
-//       ),
-//       Row(
-//         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//         mainAxisSize: MainAxisSize.max,
-//         children: [
-//           ElevatedButton(
-//             style: ElevatedButton.styleFrom(
-//               backgroundColor: colorScheme.primary,
-//               foregroundColor: colorScheme.onPrimary,
-//             ),
-//             onPressed: () {
-//               Navigator.push(
-//                 context,
-//                 MaterialPageRoute(
-//                   builder: (context) => const SplashPage(),
-//                 ),
-//               );
-//             },
-//             child: const Text("Splash Page"),
-//           ),
-//           ElevatedButton(
-//             style: ElevatedButton.styleFrom(
-//               backgroundColor: colorScheme.secondary,
-//               foregroundColor: colorScheme.onSecondary,
-//             ),
-//             onPressed: () {
-//               Navigator.push(
-//                 context,
-//                 MaterialPageRoute(
-//                   builder: (context) => const ListPage(),
-//                 ),
-//               );
-//             },
-//             child: const Text("Pokemon List"),
-//           ),
-//         ],
-//       )
-//     ],
-//   ),
-// )

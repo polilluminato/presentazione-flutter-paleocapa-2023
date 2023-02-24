@@ -12,8 +12,14 @@ class SinglePokemonPage extends StatelessWidget {
 
   Future<Pokemon> _loadInfoPokemon() async {
     try {
-      final http.Response response = await http.get(Uri.parse(pokemon.link));
-      Pokemon pokemonFromAPI = Pokemon.fromJson(json.decode(response.body));
+      final http.Response response = await http.get(
+        Uri.parse(
+          pokemon.link,
+        ),
+      );
+      Pokemon pokemonFromAPI = Pokemon.fromJson(
+        json.decode(response.body),
+      );
       return pokemonFromAPI;
     } catch (err) {
       print(err);
