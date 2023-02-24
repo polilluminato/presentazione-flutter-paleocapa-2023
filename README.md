@@ -1,6 +1,6 @@
 ## Presentazione Flutter OIB 2023
 
-Repository della presentazione su [Flutter](https://flutter.dev/) tenutasi all'[Istituto Paleocapa](https://www.itispaleocapa.edu.it/) di Bergamo.
+Repository della presentazione su [Flutter](https://flutter.dev/) per l'[Istituto Paleocapa](https://www.itispaleocapa.edu.it/) di Bergamo.
 
 ### Struttura
 
@@ -8,9 +8,15 @@ Repository della presentazione su [Flutter](https://flutter.dev/) tenutasi all'[
 * [/docs](/docs/): Appunti in formato Markdown per ripercorrere la demo
 * [/slides](/slides/): Presentazione di introduzione a Flutter, caratteristiche e potenzialità
 
+## 🐝 API
+
+* [PokéAPI - The RESTful Pokémon API](https://pokeapi.co/)
+* [APIs, Data and ML - Free for Developers](https://free-for.dev/#/?id=apis-data-and-ml)
+* [IP Geolocation API](https://ip-api.com/)
+
 ## 💎 Contributing
 
-If you have any idea, feel free to fork it and submit your changes back to me.
+Se hai qualche idea, sentiti libero di inviarmi le tue modifiche.
 
 ## 📋 License
 
