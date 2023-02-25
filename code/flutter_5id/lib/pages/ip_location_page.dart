@@ -91,50 +91,52 @@ class IpLocationInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return ipLocation.city.isEmpty
         ? Container()
-        : ListView(
-            shrinkWrap: true,
-            children: [
-              IpLocationInfoRow(
-                title: ipLocation.query,
-                subtitle: "Ip Address",
-              ),
-              IpLocationInfoRow(
-                title: ipLocation.status,
-                subtitle: "Status",
-              ),
-              IpLocationInfoRow(
-                title: "${ipLocation.country} (${ipLocation.countryCode})",
-                subtitle: "Country",
-              ),
-              IpLocationInfoRow(
-                title: "${ipLocation.regionName} (${ipLocation.region})",
-                subtitle: "Region",
-              ),
-              IpLocationInfoRow(
-                title: ipLocation.city,
-                subtitle: "City",
-              ),
-              IpLocationInfoRow(
-                title: "(${ipLocation.lat},${ipLocation.lon})",
-                subtitle: "(Latitude, Longitude)",
-              ),
-              IpLocationInfoRow(
-                title: ipLocation.timezone,
-                subtitle: "Timezone",
-              ),
-              IpLocationInfoRow(
-                title: ipLocation.isp,
-                subtitle: "ISP name	",
-              ),
-              IpLocationInfoRow(
-                title: ipLocation.org,
-                subtitle: "Organization name",
-              ),
-              IpLocationInfoRow(
-                title: ipLocation.as,
-                subtitle: "AS number and organization",
-              ),
-            ],
+        : Card(
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                IpLocationInfoRow(
+                  title: ipLocation.query,
+                  subtitle: "Ip Address",
+                ),
+                IpLocationInfoRow(
+                  title: ipLocation.status,
+                  subtitle: "Status",
+                ),
+                IpLocationInfoRow(
+                  title: "${ipLocation.country} (${ipLocation.countryCode})",
+                  subtitle: "Country",
+                ),
+                IpLocationInfoRow(
+                  title: "${ipLocation.regionName} (${ipLocation.region})",
+                  subtitle: "Region",
+                ),
+                IpLocationInfoRow(
+                  title: ipLocation.city,
+                  subtitle: "City",
+                ),
+                IpLocationInfoRow(
+                  title: "(${ipLocation.lat},${ipLocation.lon})",
+                  subtitle: "(Latitude, Longitude)",
+                ),
+                IpLocationInfoRow(
+                  title: ipLocation.timezone,
+                  subtitle: "Timezone",
+                ),
+                IpLocationInfoRow(
+                  title: ipLocation.isp,
+                  subtitle: "ISP name	",
+                ),
+                IpLocationInfoRow(
+                  title: ipLocation.org,
+                  subtitle: "Organization name",
+                ),
+                IpLocationInfoRow(
+                  title: ipLocation.as,
+                  subtitle: "AS number and organization",
+                ),
+              ],
+            ),
           );
   }
 }
@@ -150,14 +152,12 @@ class IpLocationInfoRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 8,
+        horizontal: 4,
         vertical: 2,
       ),
-      child: Card(
-        child: ListTile(
-          title: Text(title),
-          subtitle: Text(subtitle),
-        ),
+      child: ListTile(
+        title: Text(title),
+        subtitle: Text(subtitle),
       ),
     );
   }
