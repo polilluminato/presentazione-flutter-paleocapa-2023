@@ -4,13 +4,13 @@ Codice dell'applicazione di esempio realizzata durante la parte di demo per most
 
 ## Caratteristiche
 
+* Piccola personalizzazione del tema e dei font
 * Pagina con visualizzazione di un layout d'esempio di una splash screen
 * Pagina con una lista di elementi e tap su riga per andare alla pagina di dettaglio
 * Pagina con una griglia di elementi e tap su card per andare alla pagina di dettaglio
 * Pagina di dettaglio con chiamata HTTP per ottenere informazioni da servizio API remoto
-* Interfacciamento con le [PokeAPI - The RESTful Pokémon API](https://pokeapi.co/)
-* Piccola personalizzazione del tema
-* Esempio di swith tra light e dark theme
+* Interfacciamento con le [Pokémon - The RESTful Pokémon API](https://pokeapi.co/) per avere le informazioni su un singolo Pokémon
+* Interfacciamento con le [IP Geolocation API](https://ip-api.com/) per ottenere informazioni geolocalizzate sulla base dell'indirizzo IP
 
 ## 📱 Screenshots
 
@@ -23,9 +23,10 @@ Codice dell'applicazione di esempio realizzata durante la parte di demo per most
 | - | - | - |
 | <img src="screenshots/single-light.png"/> | <img src="screenshots/ip-location-light.png"/> | <img src="screenshots/weather-light.png"/> |
 | <img src="screenshots/single-dark.png"/> | <img src="screenshots/ip-location-dark.png"/> | <img src="screenshots/weather-dark.png"/> |
+
 ## 💎 Contributing
 
-If you have any idea, feel free to fork it and submit your changes back to me.
+Se hai qualche idea, sentiti libero di inviarmi le tue modifiche nella sezione delle [issue](https://github.com/polilluminato/presentazione-flutter-5ID-2023/issues) o con una pull request.
 
 ## 📋 License
 

@@ -355,8 +355,8 @@ Importiamo il package `http` all'interno del nostro progetto
 
 ```yaml
 dependencies:
-	...
 	http: ^0.13.5
+	...
 ```
 
 Creiamo una funzione async che vada a leggere le informazioni sulla api
@@ -454,7 +454,7 @@ Card(
 
 ## Bottom Navigation
 
-Per rendere la navigazione migliore nella nostra applicazione possiamo anche applicare una navigazione nella pagina principale con il widget `NavigationBar`. Per fare questo prima di tutto convertiamo il widget in uno `StatefulWidget` e quindi creiamo una lista di pagine che deve essere visualizzata
+Per rendere la navigazione migliore nella nostra applicazione possiamo  applicare una navigazione nella pagina principale con il widget `NavigationBar`. Per fare questo prima di tutto convertiamo il widget in uno `StatefulWidget` e quindi creiamo una lista di pagine che deve essere visualizzata
 
 ```dart
 class MyHomePage extends StatefulWidget {
@@ -468,7 +468,35 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 	int selectedTab = 0;
-	List<Widget> tabList = <Widget>[const SplashPage(), const ListPage()];
-	....
+	List<Widget> tabList = <Widget>[
+		const SplashPage(),
+		const ListPage(),
+		...
+	];
+	...
 }
+```
+
+Nel metodo `build` aggiungiamo alla key `bottomNavigationBar` il widget `NavigationBar`
+
+```dart
+bottomNavigationBar: NavigationBar(
+	onDestinationSelected: (int index) {
+		setState(() {
+			selectedTab = index;
+		});
+	},
+	selectedIndex: selectedTab,
+	destinations: const <Widget>[
+		NavigationDestination(
+			icon: Icon(Icons.home_outlined),
+			label: 'Splash',
+		),
+		NavigationDestination(
+			icon: Icon(Icons.table_rows_outlined),
+			label: 'List',
+		),
+		...
+	],
+), 
 ```
