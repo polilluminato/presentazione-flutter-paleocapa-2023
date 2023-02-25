@@ -12,17 +12,21 @@ Codice dell'applicazione di esempio realizzata durante la parte di demo per most
 * Interfacciamento con le [Pokémon - The RESTful Pokémon API](https://pokeapi.co/) per avere le informazioni su un singolo Pokémon
 * Interfacciamento con le [IP Geolocation API](https://ip-api.com/) per ottenere informazioni geolocalizzate sulla base dell'indirizzo IP
 
+#### Assets
+
+Nella cartella [assets/json/](assets/json/) sono stati salvati dei json di esempio da utilizzare come base di partenza per la creazione di layout nell'applicazione.
+
 ## 📱 Screenshots
 
-| Home | Lista | Griglia | 
-| - | - | - |
+| Home                                      | Lista                                   | Griglia                                 |
+| ----------------------------------------- | --------------------------------------- | --------------------------------------- |
 | <img src="screenshots/splash-light.png"/> | <img src="screenshots/list-light.png"/> | <img src="screenshots/grid-light.png"/> |
-| <img src="screenshots/splash-dark.png"/> | <img src="screenshots/list-dark.png"/> | <img src="screenshots/grid-dark.png"/> | 
+| <img src="screenshots/splash-dark.png"/>  | <img src="screenshots/list-dark.png"/>  | <img src="screenshots/grid-dark.png"/>  |
 
-| Single Page | Ip Location | Weather | 
-| - | - | - |
+| Single Page                               | Ip Location                                    | Weather                                    |
+| ----------------------------------------- | ---------------------------------------------- | ------------------------------------------ |
 | <img src="screenshots/single-light.png"/> | <img src="screenshots/ip-location-light.png"/> | <img src="screenshots/weather-light.png"/> |
-| <img src="screenshots/single-dark.png"/> | <img src="screenshots/ip-location-dark.png"/> | <img src="screenshots/weather-dark.png"/> |
+| <img src="screenshots/single-dark.png"/>  | <img src="screenshots/ip-location-dark.png"/>  | <img src="screenshots/weather-dark.png"/>  |
 
 ## 💎 Contributing
 

@@ -1,0 +1,55 @@
+{
+    "type": "result",
+    "timestamp": "2023-02-25T14:55:38Z",
+    "ping": {
+        "jitter": 6.717,
+        "latency": 21.523,
+        "low": 19.148,
+        "high": 33.032
+    },
+    "download": {
+        "bandwidth": 4299525,
+        "bytes": 47098080,
+        "elapsed": 11200,
+        "latency": {
+            "iqm": 463.944,
+            "low": 29.568,
+            "high": 900.725,
+            "jitter": 82.159
+        }
+    },
+    "upload": {
+        "bandwidth": 605020,
+        "bytes": 7621920,
+        "elapsed": 13200,
+        "latency": {
+            "iqm": 26.205,
+            "low": 21.896,
+            "high": 375.188,
+            "jitter": 17.106
+        }
+    },
+    "packetLoss": 0,
+    "isp": "Vodafone",
+    "interface": {
+        "internalIp": "192.168.3.15",
+        "name": "wlp3s1",
+        "macAddr": "DC:58:84:24:46:35",
+        "isVpn": false,
+        "externalIp": "248.53.146.252"
+    },
+    "server": {
+        "id": 23925,
+        "host": "speedtest.planetel.it",
+        "port": 8080,
+        "name": "Planetel",
+        "location": "Bergamo",
+        "country": "Italy",
+        "ip": "53.147.247.239"
+    },
+    "result": {
+        "id": "8c40a210-142e-42fb-92da-4d9d453ec89d",
+        "url": "https://www.speedtest.net/result/c/8c40a210-142e-42fb-92da-4d9d453ec89d",
+        "persisted": true
+    }
+}
