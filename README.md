@@ -4,7 +4,7 @@ Repository della presentazione su [Flutter](https://flutter.dev/) per l'[Istitut
 
 ### Struttura
 
-* [/code](/code/flutter_5id/): Codice dell'applicazione di esempio realizzata durante la parte di demo per mostrare le caratteristiche di Flutter
+* [/code](/code/flutter_school/): Codice dell'applicazione di esempio realizzata durante la parte di demo per mostrare le caratteristiche di Flutter
 * [/docs](/docs/): Appunti in formato Markdown per ripercorrere la demo
 * [/slides](/slides/): Presentazione di introduzione a Flutter, caratteristiche e potenzialità
 
