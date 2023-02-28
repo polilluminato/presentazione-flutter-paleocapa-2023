@@ -16,7 +16,7 @@ Repository della presentazione su [Flutter](https://flutter.dev/) per l'[Istitut
 
 ## 💎 Contributing
 
-Se hai qualche idea, sentiti libero di inviarmi le tue modifiche nella sezione delle [issue](https://github.com/polilluminato/presentazione-flutter-5ID-2023/issues) o con una pull request.
+Se hai qualche idea, sentiti libero di inviarmi le tue modifiche nella sezione delle [issue](https://github.com/polilluminato/presentazione-flutter-paleocapa-2023/issues) o con una pull request.
 
 ## 📋 License
 

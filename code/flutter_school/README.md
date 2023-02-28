@@ -23,14 +23,14 @@ Nella cartella [assets/json/](assets/json/) sono stati salvati dei json di esemp
 | <img src="screenshots/splash-light.png"/> | <img src="screenshots/list-light.png"/> | <img src="screenshots/grid-light.png"/> |
 | <img src="screenshots/splash-dark.png"/>  | <img src="screenshots/list-dark.png"/>  | <img src="screenshots/grid-dark.png"/>  |
 
-| Single Page                               | Ip Location                                    | Weather                                    |
-| ----------------------------------------- | ---------------------------------------------- | ------------------------------------------ |
-| <img src="screenshots/single-light.png"/> | <img src="screenshots/ip-location-light.png"/> | <img src="screenshots/weather-light.png"/> |
-| <img src="screenshots/single-dark.png"/>  | <img src="screenshots/ip-location-dark.png"/>  | <img src="screenshots/weather-dark.png"/>  |
+| Single Page                               | Ip Location                                    |
+| ----------------------------------------- | ---------------------------------------------- |
+| <img src="screenshots/single-light.png"/> | <img src="screenshots/ip-location-light.png"/> |
+| <img src="screenshots/single-dark.png"/>  | <img src="screenshots/ip-location-dark.png"/>  |
 
 ## 💎 Contributing
 
-Se hai qualche idea, sentiti libero di inviarmi le tue modifiche nella sezione delle [issue](https://github.com/polilluminato/presentazione-flutter-5ID-2023/issues) o con una pull request.
+Se hai qualche idea, sentiti libero di inviarmi le tue modifiche nella sezione delle [issue](https://github.com/polilluminato/presentazione-flutter-paleocapa-2023/issues) o con una pull request.
 
 ## 📋 License
 
