@@ -18,15 +18,10 @@ Nella cartella [assets/json/](assets/json/) sono stati salvati dei json di esemp
 
 ## 📱 Screenshots
 
-| Home                                      | Lista                                   | Griglia                                 |
-| ----------------------------------------- | --------------------------------------- | --------------------------------------- |
-| <img src="screenshots/splash-light.png"/> | <img src="screenshots/list-light.png"/> | <img src="screenshots/grid-light.png"/> |
-| <img src="screenshots/splash-dark.png"/>  | <img src="screenshots/list-dark.png"/>  | <img src="screenshots/grid-dark.png"/>  |
-
-| Single Page                               | Ip Location                                    |
-| ----------------------------------------- | ---------------------------------------------- |
-| <img src="screenshots/single-light.png"/> | <img src="screenshots/ip-location-light.png"/> |
-| <img src="screenshots/single-dark.png"/>  | <img src="screenshots/ip-location-dark.png"/>  |
+| Home                                      | Lista                                   | Griglia                                 | Single Page                               | Ip Location                                    |
+| ----------------------------------------- | --------------------------------------- | --------------------------------------- | ----------------------------------------- | ---------------------------------------------- |
+| <img src="screenshots/splash-light.png"/> | <img src="screenshots/list-light.png"/> | <img src="screenshots/grid-light.png"/> | <img src="screenshots/single-light.png"/> | <img src="screenshots/ip-location-light.png"/> |
+| <img src="screenshots/splash-dark.png"/>  | <img src="screenshots/list-dark.png"/>  | <img src="screenshots/grid-dark.png"/>  | <img src="screenshots/single-dark.png"/>  | <img src="screenshots/ip-location-dark.png"/>  |
 
 ## 💎 Contributing
 
