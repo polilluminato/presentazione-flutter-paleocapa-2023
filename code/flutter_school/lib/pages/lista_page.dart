@@ -14,7 +14,15 @@ class ListPage extends StatelessWidget {
         itemBuilder: (context, index) {
           PokemonItem myPokemon = pokemonList[index];
           return Card(
+            margin: const EdgeInsets.symmetric(
+              horizontal: 8,
+              vertical: 4,
+            ),
             child: ListTile(
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 8,
+                horizontal: 8,
+              ),
               onTap: () {
                 Navigator.push(
                   context,
@@ -31,7 +39,6 @@ class ListPage extends StatelessWidget {
                 backgroundImage: NetworkImage(myPokemon.imageLink ?? ""),
               ),
               title: Text(myPokemon.name),
-              subtitle: Text(myPokemon.link),
               trailing: const Icon(Icons.chevron_right),
             ),
           );
