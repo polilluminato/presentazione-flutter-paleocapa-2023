@@ -16,14 +16,14 @@ Prendi il layout e prova ad applicare un po' di stili al testo
 
 ```dart
 Container(
-    margin: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-    child: Text(
-    'Flutter Application 5ID',
-    style: TextStyle(
-        color: colorScheme.primary,
-        fontSize: 34,
-        fontWeight: FontWeight.bold,
-    ),
+		margin: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+		child: Text(
+			'Flutter Application 5ID',
+			style: TextStyle(
+				color: colorScheme.primary,
+				fontSize: 34,
+				fontWeight: FontWeight.bold,
+			),
     ),
 ),
 ```
@@ -51,10 +51,10 @@ Creiamo delle pagine nella cartella `pages` chiamate `lista_page.dart` e `splash
 
 ```dart
 onPressed: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const SplashPage()),
-  );
+	Navigator.push(
+		context,
+		MaterialPageRoute(builder: (context) => const SplashPage()),
+	);
 }
 ```
 
@@ -65,17 +65,17 @@ import 'package:flutter/material.dart';
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Splash page"),
-      ),
-      body: const Center(
-        child: Text("Splash page"),
-      ),
-    );
-  }
+	@override
+	Widget build(BuildContext context) {
+		return Scaffold(
+			appBar: AppBar(
+				title: const Text("Splash page"),
+			),
+			body: const Center(
+				child: Text("Splash page"),
+			),
+		);
+	}
 }
 
 ```
@@ -90,26 +90,26 @@ Crea una cartella con i models per la lista Pokémon `models/pokemon_item.dart`
 
 ```dart
 class PokemonItem {
-  String name;
-  String link;
-  int? id;
-  String? imageLink;
+	String name;
+	String link;
+	int? id;
+	String? imageLink;
 
-  PokemonItem(this.name, this.link) {
-    //Link fatto come https://pokeapi.co/api/v2/pokemon/5/
-    //  vado a prenderne id alla fine
-    id = int.parse(link.substring(link.length - 2, link.length - 1));
+	PokemonItem(this.name, this.link) {
+		//Link fatto come https://pokeapi.co/api/v2/pokemon/5/
+		//  vado a prenderne id alla fine
+		id = int.parse(link.substring(link.length - 2, link.length - 1));
 
-    //I nomi mi arrivano tutti in lowercase, in questo modo metto la prima
-    //  lettera maiuscola: bulbasaur -> Bulbasaur
-    name = name[0].toUpperCase() + name.substring(1).toLowerCase();
+		//I nomi mi arrivano tutti in lowercase, in questo modo metto la prima
+		//  lettera maiuscola: bulbasaur -> Bulbasaur
+		name = name[0].toUpperCase() + name.substring(1).toLowerCase();
 
-    //Basandosi sull'API per il singolo pokemon l'immagine può essere ottenuta
-    //  componendo il link in questo modo:
-    //  - https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png
-    imageLink =
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
-  }
+		//Basandosi sull'API per il singolo pokemon l'immagine può essere ottenuta
+		//  componendo il link in questo modo:
+		//  - https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png
+		imageLink =
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
+	}
 }
 ```
 
@@ -117,15 +117,15 @@ crea un file `data/pokemon_list.dart` in cui metti una lista di Pokémon già fa
 
 ```dart
 List<PokemonItem> pokemonList = [
-  PokemonItem("bulbasaur", "https://pokeapi.co/api/v2/pokemon/1/"),
-  PokemonItem("ivysaur", "https://pokeapi.co/api/v2/pokemon/2/"),
-  PokemonItem("venusaur", "https://pokeapi.co/api/v2/pokemon/3/"),
-  PokemonItem("charmander", "https://pokeapi.co/api/v2/pokemon/4/"),
-  PokemonItem("charmeleon", "https://pokeapi.co/api/v2/pokemon/5/"),
-  PokemonItem("charizard", "https://pokeapi.co/api/v2/pokemon/6/"),
-  PokemonItem("squirtle", "https://pokeapi.co/api/v2/pokemon/7/"),
-  PokemonItem("wartortle", "https://pokeapi.co/api/v2/pokemon/8/"),
-  PokemonItem("blastoise", "https://pokeapi.co/api/v2/pokemon/9/")
+	PokemonItem("bulbasaur", "https://pokeapi.co/api/v2/pokemon/1/"),
+	PokemonItem("ivysaur", "https://pokeapi.co/api/v2/pokemon/2/"),
+	PokemonItem("venusaur", "https://pokeapi.co/api/v2/pokemon/3/"),
+	PokemonItem("charmander", "https://pokeapi.co/api/v2/pokemon/4/"),
+	PokemonItem("charmeleon", "https://pokeapi.co/api/v2/pokemon/5/"),
+	PokemonItem("charizard", "https://pokeapi.co/api/v2/pokemon/6/"),
+	PokemonItem("squirtle", "https://pokeapi.co/api/v2/pokemon/7/"),
+	PokemonItem("wartortle", "https://pokeapi.co/api/v2/pokemon/8/"),
+	PokemonItem("blastoise", "https://pokeapi.co/api/v2/pokemon/9/")
 ];
 ```
 
@@ -133,11 +133,11 @@ Ritorna nella pagina con la lista da creare e aggiungi la lista
 
 ```dart
 body: ListView.builder(
-  itemCount: pokemonList.length,
-  itemBuilder: (context, index) {
-    PokemonItem myPokemon = pokemonList[index];
-    return Text(myPokemon.name);
-  },
+	itemCount: pokemonList.length,
+	itemBuilder: (context, index) {
+		PokemonItem myPokemon = pokemonList[index];
+		return Text(myPokemon.name);
+	},
 ),
 ```
 
@@ -145,12 +145,12 @@ Per rendere più bella la ui possiamo personalizzarla in diverso modo
 
 ```dart
 return Card(
-  child: ListTile(
-    leading: Text("${myPokemon.id}°"),
-    title: Text(myPokemon.name),
-    subtitle: Text(myPokemon.link),
-    trailing: const Icon(Icons.chevron_right),
-  ),
+	child: ListTile(
+		leading: Text("${myPokemon.id}°"),
+		title: Text(myPokemon.name),
+		subtitle: Text(myPokemon.link),
+		trailing: const Icon(Icons.chevron_right),
+	),
 );
 ```
 
@@ -158,8 +158,9 @@ Concludi il tutto con l'immagine dell'avatar del Pokémon sulla sinistra
 
 ```dart
 leading: CircleAvatar(
-  backgroundColor: Colors.transparent,
-  backgroundImage: NetworkImage(myPokemon.imageLink ?? ""),
+	radius: 26,
+	backgroundColor: Colors.transparent,
+	backgroundImage: NetworkImage(myPokemon.imageLink ?? ""),
 ),
 ```
 
@@ -168,8 +169,8 @@ leading: CircleAvatar(
 Vai a prendere una immagine che vuoi da [undraw](https://undraw.co/) e crea una cartella `assets/images` in cui includere l'immagine che hai scaricato. Apri quindi il file pubspec.yaml e aggiungi la riga per permetter a Flutter di trovare l'immagine
 
 ```yaml
-  assets:
-    - assets/images/
+	assets:
+		- assets/images/
 ```
 
 Crea una UI simile a questa, utile per una splash page
@@ -197,14 +198,14 @@ Per rendere il tutto più bello e coerente con il material theme si possono dich
 
 ```dart
 @override
-  Widget build(BuildContext context) {
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
-    TextTheme textTheme = Theme.of(context).textTheme;
+Widget build(BuildContext context) {
+	ColorScheme colorScheme = Theme.of(context).colorScheme;
+	TextTheme textTheme = Theme.of(context).textTheme;
 
-    return Scaffold(
-      ...
-    );
-  }
+	return Scaffold(
+		...
+	);
+}
 ```
 
 In questo modo possiamo farci aiutare nella struttura della pagina e nella creazione dei titoli
@@ -260,19 +261,19 @@ Creare un file chiamato `pages/single_pokemon_page.dart`  e inizializzarlo con d
 import 'package:flutter/material.dart';
 
 class SinglePokemonPage extends StatelessWidget {
-  const SinglePokemonPage({super.key});
+	const SinglePokemonPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Single Pokémon"),
-      ),
-      body: const Center(
-        child: Text("Pokémon"),
-      ),
-    );
-  }
+	@override
+	Widget build(BuildContext context) {
+		return Scaffold(
+			appBar: AppBar(
+				title: const Text("Single Pokémon"),
+			),
+			body: const Center(
+				child: Text("Pokémon"),
+			),
+		);
+	}
 }
 ```
 
@@ -280,13 +281,13 @@ Impostare la navigazione dalla lista Pokèmon per andare alla singola pagina del
 
 ```dart
 ListTile(
-	onTap: () {
-		Navigator.push(
-			context,
-			MaterialPageRoute(
-				builder: (context) => const SinglePokemonPage(),
-		),
-	);
+		onTap: () {
+			Navigator.push(
+				context,
+				MaterialPageRoute(
+					builder: (context) => const SinglePokemonPage(),
+			),
+		);
 	},
 	...
 ),
@@ -328,26 +329,26 @@ Per avere maggiori informazioni su un Pokémon possiamo fare una chiamata HTTP a
 
 ```dart
 class Pokemon {
-  final String name;
-  final int height;
-  final int weight;
+	final String name;
+	final int height;
+	final int weight;
 
-  Pokemon({required this.name, required this.height, required this.weight});
+	Pokemon({required this.name, required this.height, required this.weight});
 
-  factory Pokemon.fromJson(Map<String, dynamic> data) {
-    //I nomi mi arrivano tutti in lowercase, in questo modo metto la prima
-    //  lettera maiuscola: bulbasaur -> Bulbasaur
-    String nameFromApi = data['name'] as String;
-    final name =
-        nameFromApi[0].toUpperCase() + nameFromApi.substring(1).toLowerCase();
+	factory Pokemon.fromJson(Map<String, dynamic> data) {
+		//I nomi mi arrivano tutti in lowercase, in questo modo metto la prima
+		//  lettera maiuscola: bulbasaur -> Bulbasaur
+		String nameFromApi = data['name'] as String;
+		final name =
+			nameFromApi[0].toUpperCase() + nameFromApi.substring(1).toLowerCase();
 
-    final height = data['height'] as int;
-    final weight = data['weight'] as int;
-    final imageLink =
-        data['sprites']['other']['official-artwork']['front_default'] as String;
-    return Pokemon(
-        name: name, height: height, weight: weight, imageLink: imageLink);
-  }
+		final height = data['height'] as int;
+		final weight = data['weight'] as int;
+		final imageLink =
+			data['sprites']['other']['official-artwork']['front_default'] as String;
+		return Pokemon(
+			name: name, height: height, weight: weight, imageLink: imageLink);
+	}
 }
 ```
 
@@ -364,12 +365,13 @@ Creiamo una funzione async che vada a leggere le informazioni sulla api
 ```dart
 Future<Pokemon> _loadInfoPokemon() async {
 	try {
-	  final http.Response response = await http.get(Uri.parse(pokemon.link));
-	  Pokemon pokemonFromAPI = Pokemon.fromJson(json.decode(response.body));
-	  return pokemonFromAPI;
+		final http.Response response = await http.get(Uri.parse(pokemon.link));
+		Pokemon pokemonFromAPI = Pokemon.fromJson(json.decode(response.body));
+		return pokemonFromAPI;
 	} catch (err) {
-	  print(err);
+		print(err);
 	}
+
 	return Pokemon(name: "Error", height: 0, weight: 0);
 }
 ```
@@ -380,19 +382,19 @@ Andiamo a modificare il body del nostro scaffold con un `FutureBuilder` in modo 
 body: FutureBuilder<Pokemon>(
 	future: _loadInfoPokemon(),
 	builder: (BuildContext ctx, AsyncSnapshot<Pokemon> snapshot) {
-	  if (snapshot.hasData) {
-		Pokemon myPokemon = snapshot.data!;
-		return Column(
-		  children: [
-			Image.network(myPokemon.imageLink),
-			Text(myPokemon.name),
-		  ],
-		);
-	  } else {
-		return const Center(
-		  child: CircularProgressIndicator(),
-		);
-	  }
+		if (snapshot.hasData) {
+			Pokemon myPokemon = snapshot.data!;
+			return Column(
+				children: [
+				Image.network(myPokemon.imageLink),
+				Text(myPokemon.name),
+				],
+			);
+		} else {
+			return const Center(
+				child: CircularProgressIndicator(),
+			);
+		}
 	},
 ),
 ```
@@ -412,43 +414,43 @@ All'interno della classe Pokémon abbiamo anche messo `weight` e `height` possia
 
 ```dart
 Card(
-  margin:
-	  const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-  child: Row(
+	margin:
+		const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+	child: Row(
 	mainAxisAlignment: MainAxisAlignment.spaceAround,
 	children: [
-	  Container(
+		Container(
 		padding: const EdgeInsets.all(16),
 		child: Column(
-		  children: [
-			Text(
-			  "${myPokemon.weight}",
-			  style: textTheme.headlineMedium,
-			),
-			Text(
-			  "Weight",
-			  style: textTheme.bodyLarge,
-			)
-		  ],
+			children: [
+				Text(
+					"${myPokemon.weight}",
+					style: textTheme.headlineMedium,
+				),
+				Text(
+					"Weight",
+					style: textTheme.bodyLarge,
+				)
+			],
 		),
-	  ),
-	  Container(
+		),
+		Container(
 		padding: const EdgeInsets.all(16),
 		child: Column(
-		  children: [
-			Text(
-			  "${myPokemon.height}",
-			  style: textTheme.headlineMedium,
-			),
-			Text(
-			  "Height",
-			  style: textTheme.bodyLarge,
-			)
-		  ],
+			children: [
+				Text(
+					"${myPokemon.height}",
+					style: textTheme.headlineMedium,
+				),
+				Text(
+					"Height",
+					style: textTheme.bodyLarge,
+				)
+			],
 		),
-	  ),
+		),
 	],
-  ),
+	),
 )
 ```
 
@@ -458,12 +460,12 @@ Per rendere la navigazione migliore nella nostra applicazione possiamo  applicar
 
 ```dart
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+	const MyHomePage({super.key, required this.title});
 
-  final String title;
+	final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
+	@override
+	State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
