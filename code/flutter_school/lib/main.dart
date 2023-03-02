@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_school/pages/griglia_page.dart';
 import 'package:flutter_school/pages/ip_location_page.dart';
 import 'package:flutter_school/pages/lista_page.dart';
+import 'package:flutter_school/pages/settings_page.dart';
 import 'package:flutter_school/pages/splash_page.dart';
 
 void main() {
@@ -50,11 +51,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(widget.title),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.settings),
-          )
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SettingsPage(),
+              ),
+            ),
+          ),
         ],
       ),
       body: tabList[selectedTab],
