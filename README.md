@@ -14,6 +14,16 @@ Repository della presentazione su [Flutter](https://flutter.dev/) per l'[Istitut
 * [APIs, Data and ML - Free for Developers](https://free-for.dev/#/?id=apis-data-and-ml)
 * [IP Geolocation API](https://ip-api.com/)
 
+## ⚗️ Risorse
+
+* [Flutter.dev](https://flutter.dev/)
+* [Dart.dev](https://dart.dev/)
+* [Google Codelabs](https://codelabs.developers.google.com/?product=flutter)
+* [Google Devlibrary](https://devlibrary.withgoogle.com/products/flutter?sort=updated)
+* [Your first Flutter app](https://codelabs.developers.google.com/codelabs/flutter-codelab-first#0)
+* [Flutter@Twitter](https://twitter.com/FlutterDev)
+* [Flutter@YouTube](https://www.youtube.com/@flutterdev)
+
 ## 💎 Contributing
 
 Se hai qualche idea, sentiti libero di inviarmi le tue modifiche nella sezione delle [issue](https://github.com/polilluminato/presentazione-flutter-paleocapa-2023/issues) o con una pull request.
