@@ -16,11 +16,19 @@ Repository della presentazione su [Flutter](https://flutter.dev/) per l'[Istitut
 
 ## ⚗️ Risorse
 
+### Docs
 * [Flutter.dev](https://flutter.dev/)
 * [Dart.dev](https://dart.dev/)
 * [Google Codelabs](https://codelabs.developers.google.com/?product=flutter)
 * [Google Devlibrary](https://devlibrary.withgoogle.com/products/flutter?sort=updated)
 * [Your first Flutter app](https://codelabs.developers.google.com/codelabs/flutter-codelab-first#0)
+
+### YouTube
+
+* [Every Flutter Widget Explained!](https://www.youtube.com/watch?v=kj_tldMmu4w)
+
+### Social 
+
 * [Flutter@Twitter](https://twitter.com/FlutterDev)
 * [Flutter@YouTube](https://www.youtube.com/@flutterdev)
 
