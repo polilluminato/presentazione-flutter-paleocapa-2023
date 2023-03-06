@@ -2,37 +2,75 @@
 
 ## Init progetto
 
-* MaterialApp
-	* debugShowCheckedModeBanner
-	* themeMode
-	* theme
-		* ThemeData
-			* colorSchemeSeed
-			* brightness
-			* useMaterial3
-	* darkTheme
+Creiamo un file `main.dart` con al suo interno
+
+```dart
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.grey,
+        brightness: Brightness.light,
+      ),
+      home: const MyHomePage(title: 'Flutter Application 5ID'),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      body: Center(
+        child: Text(title)
+      ),
+    );
+  }
+}
+```
 
 Prendi il layout e prova ad applicare un po' di stili al testo
 
 ```dart
 Container(
-		margin: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-		child: Text(
-			'Flutter Application 5ID',
-			style: TextStyle(
-				color: colorScheme.primary,
-				fontSize: 34,
-				fontWeight: FontWeight.bold,
-			),
-    ),
+	margin: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+	child: Text(
+		'Flutter Application 5ID',
+		style: TextStyle(
+			color: colorScheme.primary,
+			fontSize: 34,
+			fontWeight: FontWeight.bold,
+		),
+	),
 ),
 ```
 
 Aggiungi una row, metti dei bottoni e fai vedere come disporli nello spazio che mi viene dato
 
-Aggiungi un `ColorScheme colorScheme = Theme.of(context).colorScheme;` dentro il metodo build
+```dart
+Row(
+	mainAxisAlignment: MainAxisAlignment.spaceAround,
+	children: [
+		...
+	],
+),
+```
 
-Per lo styling dei bottoni
+Aggiungi un `ColorScheme colorScheme = Theme.of(context).colorScheme;` dentro il metodo build, per lo styling dei bottoni
 
 ```dart
 ElevatedButton(
@@ -47,7 +85,7 @@ ElevatedButton(
 
 ## Navigazione
 
-Creiamo delle pagine nella cartella `pages` chiamate `lista_page.dart` e `splash_page.dart`. Facciamo in modo che i due bottoni nella home mandino alle pagine:
+Creiamo delle pagine nella cartella `pages` chiamate `lista_page.dart` e `splash_page.dart`. Facciamo in modo che i due bottoni nella home mandino alle pagine
 
 ```dart
 onPressed: () {
@@ -58,12 +96,13 @@ onPressed: () {
 }
 ```
 
-Contenuto della pagina
+Contenuto della singola pagina
+
 ```dart
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({super.key});
+	const SplashPage({super.key});
 
 	@override
 	Widget build(BuildContext context) {
@@ -82,38 +121,14 @@ class SplashPage extends StatelessWidget {
 
 ## Pagina con la lista dei Pokémon
 
+| <img src="uis/list-ui-1.png"/> | <img src="uis/list-ui-2.png"/> |
+| ------------------------------ | ------------------------------ |
+
 * [Pokémon API](https://pokeapi.co/docs/v2)
 * [Pokémon List](https://pokeapi.co/docs/v2#pokemon) e [Pokémon List GET](https://pokeapi.co/api/v2/pokemon/?limit=9)
 * [Pokémon Single](https://pokeapi.co/docs/v2#pokemon) e [Pokémon Single GET](https://pokeapi.co/api/v2/pokemon/1/)
 
-Crea una cartella con i models per la lista Pokémon `models/pokemon_item.dart`
-
-```dart
-class PokemonItem {
-	String name;
-	String link;
-	int? id;
-	String? imageLink;
-
-	PokemonItem(this.name, this.link) {
-		//Link fatto come https://pokeapi.co/api/v2/pokemon/5/
-		//  vado a prenderne id alla fine
-		id = int.parse(link.substring(link.length - 2, link.length - 1));
-
-		//I nomi mi arrivano tutti in lowercase, in questo modo metto la prima
-		//  lettera maiuscola: bulbasaur -> Bulbasaur
-		name = name[0].toUpperCase() + name.substring(1).toLowerCase();
-
-		//Basandosi sull'API per il singolo pokemon l'immagine può essere ottenuta
-		//  componendo il link in questo modo:
-		//  - https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png
-		imageLink =
-			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
-	}
-}
-```
-
-crea un file `data/pokemon_list.dart` in cui metti una lista di Pokémon già fatta
+Crea un file `data/pokemon_list.dart` in cui metti una lista di Pokémon già fatta
 
 ```dart
 List<PokemonItem> pokemonList = [
@@ -129,7 +144,28 @@ List<PokemonItem> pokemonList = [
 ];
 ```
 
-Ritorna nella pagina con la lista da creare e aggiungi la lista
+Crea una cartella con i models per la lista Pokémon `models/pokemon_item.dart`
+
+```dart
+class PokemonItem {
+	String name;
+	String link;
+	int? id;
+	String? imageLink;
+
+	PokemonItem(this.name, this.link) {
+		//https://pokeapi.co/api/v2/pokemon/5/
+		id = int.parse(link.substring(link.length - 2, link.length - 1));
+
+		name = name[0].toUpperCase() + name.substring(1).toLowerCase();
+
+		imageLink =
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
+	}
+}
+```
+
+Ritorna nella pagina `pages/lista_page.dart` con la lista da creare e aggiungi la lista
 
 ```dart
 body: ListView.builder(
@@ -165,6 +201,9 @@ leading: CircleAvatar(
 ```
 
 ## Pagina con la splash screen
+
+| <img src="uis/splash-ui-1.png"/> | <img src="uis/splash-ui-2.png"/> |
+| -------------------------------- | -------------------------------- |
 
 Vai a prendere una immagine che vuoi da [undraw](https://undraw.co/) e crea una cartella `assets/images` in cui includere l'immagine che hai scaricato. Apri quindi il file pubspec.yaml e aggiungi la riga per permetter a Flutter di trovare l'immagine
 
@@ -238,7 +277,7 @@ appBar: AppBar(
 
 Mostra come le due variabili del tema siano utili per mantenere il tutto coeso all'interno della app provando a cambiare lo stile.
 
-Volendo provare a fare qualche personalizzazione sull'immagine si può anche sfruttare il media query prendere le dimensioni della finestra e adattare la UI di consenguenza, per farlo basta aggiungere nel metodo build la seguente variabile
+Volendo provare a fare qualche personalizzazione sull'immagine si può anche sfruttare il media query per prendere le dimensioni della finestra e adattare la UI di consenguenza, per farlo basta aggiungere nel metodo build la seguente variabile
 
 ```dart
 Size screenSize = MediaQuery.of(context).size;
@@ -254,6 +293,9 @@ Image.asset(
 ```
 
 ## Singola pagina di un Pokemon
+
+| <img src="uis/single-ui-1.png"/> | <img src="uis/single-ui-2.png"/> | <img src="uis/single-ui-3.png"/> |
+| -------------------------------- | -------------------------------- | -------------------------------- |
 
 Creare un file chiamato `pages/single_pokemon_page.dart`  e inizializzarlo con del codice d'esempio
 
@@ -281,11 +323,11 @@ Impostare la navigazione dalla lista Pokèmon per andare alla singola pagina del
 
 ```dart
 ListTile(
-		onTap: () {
-			Navigator.push(
-				context,
-				MaterialPageRoute(
-					builder: (context) => const SinglePokemonPage(),
+	onTap: () {
+		Navigator.push(
+			context,
+			MaterialPageRoute(
+				builder: (context) => const SinglePokemonPage(),
 			),
 		);
 	},
@@ -299,7 +341,7 @@ Per passare l'informazione sul Pokèmon in questione dobbiamo creare un parametr
 //Dentro list_page.dart
 Navigator.push(
 	context,
-		MaterialPageRoute(
+	MaterialPageRoute(
 		builder: (context) => SinglePokemonPage(
 		  pokemon: myPokemon,
 		),
@@ -336,8 +378,6 @@ class Pokemon {
 	Pokemon({required this.name, required this.height, required this.weight});
 
 	factory Pokemon.fromJson(Map<String, dynamic> data) {
-		//I nomi mi arrivano tutti in lowercase, in questo modo metto la prima
-		//  lettera maiuscola: bulbasaur -> Bulbasaur
 		String nameFromApi = data['name'] as String;
 		final name =
 			nameFromApi[0].toUpperCase() + nameFromApi.substring(1).toLowerCase();
